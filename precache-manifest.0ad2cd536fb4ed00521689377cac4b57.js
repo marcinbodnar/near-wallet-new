@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "06f30ef4f0f76fe0465f",
+    "revision": "eb9cee42c69823e93b00",
     "url": "/near-wallet-new/static/css/main.82bb0af5.chunk.css"
   },
   {
-    "revision": "06f30ef4f0f76fe0465f",
-    "url": "/near-wallet-new/static/js/main.d484be50.chunk.js"
+    "revision": "eb9cee42c69823e93b00",
+    "url": "/near-wallet-new/static/js/main.c5fbfeff.chunk.js"
   },
   {
     "revision": "66fda48dea560134e91a",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/near-wallet-new/static/media/icon-home.f5feea3c.svg"
   },
   {
-    "revision": "80de4be13c1e8cb51561e60a80ddfb9c",
+    "revision": "8b019ff6556acad90fb7705a308b118f",
     "url": "/near-wallet-new/index.html"
   }
 ];

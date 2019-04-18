@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/near-wallet-new/static/media/icon-home.f5feea3c.svg"
   },
   {
-    "revision": "8b019ff6556acad90fb7705a308b118f",
+    "revision": "a5376d52d97ab9c94529755a481f34fa",
     "url": "/near-wallet-new/index.html"
   }
 ];

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/near-wallet-new/precache-manifest.9d90077325daf5f3ae7b17c8a9d0e8a3.js"
+  "/near-wallet-new/precache-manifest.96c4baecc19b2551df0d1b5a631871c5.js"
 );
 
 workbox.clientsClaim();

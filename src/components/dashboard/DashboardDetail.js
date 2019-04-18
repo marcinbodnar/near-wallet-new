@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
+import { withRouter } from 'react-router-dom'
+
 import { Wallet } from '../../utils/wallet'
 
 import { handleRefreshAccount, handleRefreshUrl } from '../../actions/account'
@@ -19,6 +21,10 @@ const CustomContainer = styled(Container)`
          padding-bottom: 24px;
       }
    }
+
+   .column {
+      word-break: break-all;
+   }
 `
 
 class DashboardDetail extends Component {
@@ -29,7 +35,7 @@ class DashboardDetail extends Component {
    componentDidMount() {
       this.wallet = new Wallet()
       this.props.handleRefreshUrl(this.props.location)
-      this.props.handleRefreshAccount(this.wallet)
+      this.props.handleRefreshAccount(this.wallet, this.props.history)
    }
 
    render() {
@@ -93,4 +99,4 @@ const mapStateToProps = ({ account }) => ({
 export default connect(
    mapStateToProps,
    mapDispatchToProps
-)(DashboardDetail)
+)(withRouter(DashboardDetail))

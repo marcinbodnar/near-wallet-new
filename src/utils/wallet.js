@@ -1,7 +1,7 @@
 import nearlib from 'nearlib'
 
-const WALLET_URL = '/login/'
-const WALLET_CREATE_NEW_ACCOUNT_URL = `${process.env.PUBLIC_URL}/create/`
+const WALLET_URL = `/login/`
+const WALLET_CREATE_NEW_ACCOUNT_URL = `/create/`
 
 const CONTRACT_CREATE_ACCOUNT_URL =
    'https://studio.nearprotocol.com/contract-api/account'
@@ -95,9 +95,9 @@ export class Wallet {
       )
    }
 
-   redirect_to_create_account(options = {}) {
+   redirect_to_create_account(options = {}, history) {
       const param = {
-         next_url: window.location.href
+         next_url: window.location.search
       }
       if (options.reset_accounts) {
          param.reset_accounts = true
@@ -112,20 +112,20 @@ export class Wallet {
                   param[p]
                )}`
          )
-      window.location.replace(url)
+      history ? history.push(url) : window.location.replace(url)
    }
 
    is_empty() {
       return !this.accounts || !Object.keys(this.accounts).length
    }
 
-   redirect_if_empty() {
+   redirect_if_empty(history) {
       if (this.is_empty()) {
-         this.redirect_to_create_account()
+         this.redirect_to_create_account({}, history)
       }
    }
 
-   async load_account(account_id) {
+   async load_account(account_id, history) {
       if (!(account_id in this.accounts)) {
          throw 'Account ' + account_id + " doesn't exists."
       }
@@ -136,9 +136,12 @@ export class Wallet {
             // We have an account in the storage, but it doesn't exist on blockchain. We probably nuked storage so just redirect to create account
             console.log(e)
             this.clear_state()
-            this.redirect_to_create_account({
-               reset_accounts: true
-            })
+            this.redirect_to_create_account(
+               {
+                  reset_accounts: true
+               },
+               history
+            )
          }
       }
    }

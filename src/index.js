@@ -8,13 +8,14 @@ import reducer from './reducers'
 import middleware from './middleware'
 
 import Routing from './components/Routing'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
 
 const store = createStore(reducer, middleware)
 
 ReactDOM.render(
    <Provider store={store}>
       <Routing />
-   </Provider>, 
-   document.getElementById('root'))
+   </Provider>,
+   document.getElementById('root')
+)
 serviceWorker.unregister()

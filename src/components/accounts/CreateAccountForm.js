@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import { Segment, Form, Button, Responsive } from 'semantic-ui-react'
 
 import ProblemsImage from '../../images/icon-problems.svg'
@@ -87,7 +87,7 @@ const AccountForm = styled(Form)`
 
 const CreateAccountForm = ({
    form_loader,
-   search,
+   account_id,
    is_legit,
    success_message,
    error_message,
@@ -101,7 +101,7 @@ const CreateAccountForm = ({
             error_message ? 'problem' : ''
          }`}
          name='account_id'
-         value={search}
+         value={account_id}
          onChange={handleChange}
          placeholder='example: satoshi.near'
       />
@@ -126,5 +126,15 @@ const CreateAccountForm = ({
       </Button>
    </AccountForm>
 )
+
+CreateAccountForm.propTypes = {
+   form_loader: PropTypes.bool.isRequired,
+   account_id: PropTypes.string,
+   is_legit: PropTypes.bool.isRequired,
+   success_message: PropTypes.bool.isRequired,
+   error_message: PropTypes.bool.isRequired,
+   handleSubmit: PropTypes.func.isRequired,
+   handleChange: PropTypes.func.isRequired
+}
 
 export default CreateAccountForm

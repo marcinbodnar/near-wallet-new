@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Grid, Image, List } from 'semantic-ui-react'
 
 import LogoFooterImage from '../../images/near.svg'

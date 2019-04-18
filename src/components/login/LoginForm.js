@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { Grid, Segment, List, Form, Button } from 'semantic-ui-react'
@@ -10,6 +11,10 @@ import AccountGreyImage from '../../images/icon-account-grey.svg'
 import styled from 'styled-components'
 
 const CustomGrid = styled(Grid)`
+   &&& {
+      padding-bottom: 200px;
+   }
+
    && button {
       width: 190px;
       height: 60px;
@@ -129,6 +134,7 @@ const CustomGrid = styled(Grid)`
          border: solid 4px #24272a;
          margin: 0px;
          padding: 0px;
+         cursor: pointer;
 
          background: #24272a;
 
@@ -156,7 +162,7 @@ const CustomGrid = styled(Grid)`
    @media screen and (max-width: 767px) {
       && button,
       && .deny {
-         width: 140px;
+         width: 130px;
          height: 50px;
          border-radius: 25px;
 
@@ -214,12 +220,12 @@ const LoginForm = ({
                            </List.Item>
                         </List>
                      ))}
-                  <List to='/create' className='create-account'>
+                  <List
+                     onClick={redirectCreateAccount}
+                     className='create-account'
+                  >
                      <List.Item className='img' />
-                     <List.Item
-                        onClick={redirectCreateAccount}
-                        className='h3 name color-seafoam-blue'
-                     >
+                     <List.Item className='h3 name color-seafoam-blue'>
                         Create New Account
                      </List.Item>
                   </List>
@@ -278,6 +284,15 @@ const LoginForm = ({
       </Grid.Row>
    </CustomGrid>
 )
+
+LoginForm.propTypes = {
+   dropdown: PropTypes.bool.isRequired,
+   handleOnClick: PropTypes.func.isRequired,
+   accountIdShort: PropTypes.func.isRequired,
+   handleDeny: PropTypes.func.isRequired,
+   handleSelectAccount: PropTypes.func.isRequired,
+   redirectCreateAccount: PropTypes.func.isRequired
+}
 
 const mapStateToProps = ({ account }) => ({
    account

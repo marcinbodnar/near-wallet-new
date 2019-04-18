@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
+import { withRouter, Link } from 'react-router-dom'
+
 import PropTypes from 'prop-types'
 
 import { Wallet } from '../../utils/wallet'
@@ -207,13 +210,14 @@ class MobileView extends Component {
    handleSelectAccount = account_id => {
       this.wallet = new Wallet()
       this.wallet.select_account(account_id)
-      this.props.handleRefreshAccount(this.wallet)
+      this.props.handleRefreshAccount(this.wallet, this.props.history)
       this.handleSidebarHide()
    }
 
    redirectCreateAccount = () => {
       this.wallet = new Wallet()
-      this.wallet.redirect_to_create_account()
+      this.handleSidebarHide()
+      this.wallet.redirect_to_create_account({}, this.props.history)
    }
 
    render() {
@@ -310,7 +314,7 @@ class MobileView extends Component {
 
                <Sidebar.Pusher dimmed={sidebarOpened}>
                   <Menu className='navbar' borderless size='large'>
-                     <Menu.Item as='a'>
+                     <Menu.Item as={Link} to='/'>
                         <Image className='mainlogo' src={LogoImage} />
                      </Menu.Item>
                      <Menu.Menu position='right'>
@@ -346,4 +350,4 @@ const mapStateToProps = ({ account }) => ({
 export default connect(
    mapStateToProps,
    mapDispatchToProps
-)(MobileView)
+)(withRouter(MobileView))

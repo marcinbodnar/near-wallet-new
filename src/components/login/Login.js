@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import { withRouter } from 'react-router-dom'
+
 import { Wallet } from '../../utils/wallet'
 
 import LoginContainer from './LoginContainer'
@@ -15,7 +17,7 @@ class Login extends Component {
    componentDidMount = () => {
       this.wallet = new Wallet()
       this.props.handleRefreshUrl(this.props.location)
-      this.props.handleRefreshAccount(this.wallet)
+      this.props.handleRefreshAccount(this.wallet, this.props.history)
    }
 
    handleOnClick = () => {
@@ -26,15 +28,19 @@ class Login extends Component {
 
    handleDeny = e => {
       e.preventDefault()
-      window.location.href = this.props.account.url.failure_url
+      if (this.props.account.url.failure_url) {
+         window.location.href = this.props.account.url.failure_url
+      }
    }
 
    handleSelectAccount = account_id => {
       this.wallet.select_account(account_id)
-      this.props.handleRefreshAccount(this.wallet)
+      this.props.handleRefreshAccount(this.wallet, this.props.history)
    }
 
-   redirectCreateAccount = () => this.wallet.redirect_to_create_account()
+   redirectCreateAccount = () => {
+      this.wallet.redirect_to_create_account({}, this.props.history)
+   }
 
    accountIdShort = account_id =>
       account_id.length > 12
@@ -76,4 +82,4 @@ const mapStateToProps = ({ account }) => ({
 export const LoginWithRouter = connect(
    mapStateToProps,
    mapDispatchToProps
-)(Login)
+)(withRouter(Login))

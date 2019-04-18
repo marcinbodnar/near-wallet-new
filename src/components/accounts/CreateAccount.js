@@ -53,8 +53,8 @@ class CreateAccount extends Component {
                success_message: true
             }))
             setTimeout(() => {
-               window.location.replace(
-                  parse(this.props.location.search).next_url || '/'
+               this.props.history.push(
+                  `/login/${parse(this.props.location.search).next_url || '/'}`
                )
             }, 1500)
          })
@@ -75,7 +75,7 @@ class CreateAccount extends Component {
       const { loader } = this.state
 
       return (
-         <CreateAccountContainer loader={loader}>
+         <CreateAccountContainer loader={loader} location={this.props.location}>
             <CreateAccountSection {...this.state}>
                <CreateAccountForm
                   {...this.state}

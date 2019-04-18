@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import { Grid, List, Responsive } from 'semantic-ui-react'
 
 import styled from 'styled-components'
@@ -126,5 +126,11 @@ const CreateAccountSection = ({ success_message, error_message, children }) => (
       </Grid.Row>
    </CustomGrid>
 )
+
+CreateAccountSection.propTypes = {
+   success_message: PropTypes.bool.isRequired,
+   error_message: PropTypes.bool.isRequired,
+   children: PropTypes.element.isRequired
+}
 
 export default CreateAccountSection

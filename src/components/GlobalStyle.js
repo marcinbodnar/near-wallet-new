@@ -428,7 +428,7 @@ export default createGlobalStyle`
       }
 
       .create input {
-         padding-left: 50px !important;
+         padding-left: 20px !important;
          font-size: 14px !important;
       }
 

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+
+import { withRouter } from 'react-router-dom'
+
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
@@ -17,11 +20,8 @@ import {
 } from 'semantic-ui-react'
 
 import LogoImage from '../../images/wallet.png'
-import TransactionsImage from '../../images/icon-transactions.svg'
 import HelpImage from '../../images/icon-help.svg'
 import AccountGreyImage from '../../images/icon-account-grey.svg'
-import ContractsImage from '../../images/icon-contract.svg'
-import HomeImage from '../../images/icon-home.svg'
 import ArrowDownImage from '../../images/icon-arrow-down.svg'
 
 import { handleRefreshAccount } from '../../actions/account'
@@ -213,12 +213,12 @@ class DesktopView extends Component {
    handleSelectAccount = account_id => {
       this.wallet = new Wallet()
       this.wallet.select_account(account_id)
-      this.props.handleRefreshAccount(this.wallet)
+      this.props.handleRefreshAccount(this.wallet, this.props.history)
    }
 
    redirectCreateAccount = () => {
       this.wallet = new Wallet()
-      this.wallet.redirect_to_create_account()
+      this.wallet.redirect_to_create_account({}, this.props.history)
    }
 
    render() {
@@ -321,4 +321,4 @@ const mapStateToProps = ({ account }) => ({
 export default connect(
    mapStateToProps,
    mapDispatchToProps
-)(DesktopView)
+)(withRouter(DesktopView))

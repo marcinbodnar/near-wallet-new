@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import {
    Container,
@@ -25,7 +26,7 @@ const CustomContainer = styled(Container)`
    }
 
    &&& .authorize {
-      margin-top: 60px;
+      margin-top: 40px;
 
       .bg {
          width: 64px;
@@ -67,6 +68,24 @@ const CustomContainer = styled(Container)`
       }
    }
 
+   .list-item {
+      background: url(${CheckBlueImage}) no-repeat left 24px;
+      background-size: 24px 24px;
+
+      > .content {
+         padding-left: 32px;
+      }
+   }
+
+   .list-item-deny {
+      background: url(${DenyImage}) no-repeat left 24px;
+      background-size: 24px 24px;
+
+      > .content {
+         padding-left: 32px;
+      }
+   }
+
    @media screen and (max-width: 991px) {
       && .cont {
          > div {
@@ -83,6 +102,10 @@ const CustomContainer = styled(Container)`
             border: 0px;
             padding: 10px 0 10px 10px;
          }
+      }
+
+      &&& .authorize {
+         margin-top: 20px;
       }
    }
 `
@@ -146,14 +169,12 @@ const LoginContainer = ({ loader, children, app_title }) => (
                >
                   <List className='border-right-light'>
                      <List.Item as='h3'>This allows {app_title} to:</List.Item>
-                     <List.Item>
-                        <Image src={CheckBlueImage} />
+                     <List.Item className='list-item'>
                         <List.Content className='color-black'>
                            View your Account Name
                         </List.Content>
                      </List.Item>
-                     <List.Item>
-                        <Image src={CheckBlueImage} />
+                     <List.Item className='list-item'>
                         <List.Content className='color-black'>
                            Write Chat messages with your name
                         </List.Content>
@@ -169,14 +190,12 @@ const LoginContainer = ({ loader, children, app_title }) => (
                >
                   <List className=''>
                      <List.Item as='h3'>But, does NOT allow them to:</List.Item>
-                     <List.Item>
-                        <Image src={DenyImage} />
+                     <List.Item className='list-item-deny'>
                         <List.Content className='color-black'>
                            View your private account details
                         </List.Content>
                      </List.Item>
-                     <List.Item>
-                        <Image src={DenyImage} />
+                     <List.Item className='list-item-deny'>
                         <List.Content className='color-black'>
                            Buy, Sell, or Transfer on your behalf
                         </List.Content>
@@ -197,5 +216,11 @@ const LoginContainer = ({ loader, children, app_title }) => (
       </Dimmer.Dimmable>
    </CustomContainer>
 )
+
+LoginContainer.propTypes = {
+   loader: PropTypes.bool,
+   children: PropTypes.element,
+   app_title: PropTypes.string
+}
 
 export default LoginContainer

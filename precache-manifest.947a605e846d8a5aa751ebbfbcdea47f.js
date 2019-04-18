@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "a981bc840bc018fcd082",
-    "url": "/near-wallet-new/static/css/main.82bb0af5.chunk.css"
+    "revision": "f57785f66b1156a6fbea",
+    "url": "/near-wallet-new/static/css/main.c35f7a67.chunk.css"
   },
   {
-    "revision": "a981bc840bc018fcd082",
-    "url": "/near-wallet-new/static/js/main.18116137.chunk.js"
+    "revision": "f57785f66b1156a6fbea",
+    "url": "/near-wallet-new/static/js/main.c448988b.chunk.js"
   },
   {
     "revision": "66fda48dea560134e91a",
     "url": "/near-wallet-new/static/js/runtime~main.b0b7e353.js"
   },
   {
-    "revision": "1f0fb0b83b7648686c33",
-    "url": "/near-wallet-new/static/js/2.b2bc945a.chunk.js"
+    "revision": "5ce6cbec0752ba52c5da",
+    "url": "/near-wallet-new/static/js/2.9565c0c6.chunk.js"
   },
   {
     "revision": "4d7da4912d87b6e16bd5636f9242aefa",
@@ -72,27 +72,15 @@ self.__precacheManifest = [
     "url": "/near-wallet-new/static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf"
   },
   {
-    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
-    "url": "/near-wallet-new/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
-  },
-  {
     "revision": "dde73b38b35929e873bb5c9955f5c863",
     "url": "/near-wallet-new/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf"
   },
   {
-    "revision": "faebc92a5a81ac8dd1f137a5102c9c4e",
-    "url": "/near-wallet-new/static/media/icon-transactions.faebc92a.svg"
+    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
+    "url": "/near-wallet-new/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
   },
   {
-    "revision": "b138ae7e22dc848297e344a269030ded",
-    "url": "/near-wallet-new/static/media/icon-contract.b138ae7e.svg"
-  },
-  {
-    "revision": "f5feea3c3d44f29b89268fd22d209646",
-    "url": "/near-wallet-new/static/media/icon-home.f5feea3c.svg"
-  },
-  {
-    "revision": "3551ad64f167f5baf4ab40c1acc46bbf",
+    "revision": "5ac2be5cd77218decad511e3672e0994",
     "url": "/near-wallet-new/index.html"
   }
 ];

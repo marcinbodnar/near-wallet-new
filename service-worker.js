@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/near-wallet/precache-manifest.c6e59b3fba4d1730b5e9ffb097faca0f.js"
+  "/near-wallet-new/precache-manifest.f229aa0eb6ffc004dba074b96f401329.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/near-wallet/index.html", {
+workbox.routing.registerNavigationRoute("/near-wallet-new/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

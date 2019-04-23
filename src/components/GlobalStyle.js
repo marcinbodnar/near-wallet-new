@@ -96,9 +96,9 @@ export default createGlobalStyle`
    h5, .h5 {
       font-family: "benton-sans",sans-serif !important;
       font-size: 13px !important;
-      line-height: 26px !important;
-      font-weight: 500 !important;
-      color: #999999;
+      line-height: 26px;
+      font-weight: 500;
+      color: #999999 !important;
       margin: 0px;
       letter-spacing: 1.8px;
    }
@@ -106,9 +106,9 @@ export default createGlobalStyle`
    h6, .h6 {
       font-family: "benton-sans",sans-serif !important;
       font-size: 12px !important;
-      line-height: 18px !important;
-      font-weight: 600 !important;
-      color: #999999 !important;
+      line-height: 18px;
+      font-weight: 600;
+      color: #999999;
       margin: 0px !important;
       letter-spacing: 1.5px !important;
    }
@@ -224,7 +224,7 @@ export default createGlobalStyle`
    .box {
       border: 4px solid #e6e6e6;
       border-radius: 8px;
-      margin-bottom: 0px !important;
+      margin-bottom: 0px;
       position: relative;
       min-height: 100px;
       position: relative;
@@ -314,27 +314,10 @@ export default createGlobalStyle`
    }
 
 
-   .column-icon {
-      width: 24px !important;
-      display: inline-block !important;
-      margin: -4px 10px 0 10px !important;
-   }
+   
 
 
-   link.view-all, button.view-all, a.view-all {
-      background: #6ad1e3 !important;
-      margin: 0 !important;
-      padding: 10px 20px !important;
-      color: #fff !important;
-      font-weight: 600 !important;
-      border-radius: 20px !important;
-      border: 2px solid #6ad1e3 !important;
-
-      :hover {
-         background: #fff !important;
-         color: #6ad1e3 !important;
-      }
-   }
+   
    
 
 

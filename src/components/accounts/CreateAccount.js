@@ -71,6 +71,10 @@ class CreateAccount extends Component {
          })
    }
 
+   handleRecaptcha = value => {
+      console.log(value)
+   }
+
    render() {
       const { loader } = this.state
 
@@ -81,6 +85,7 @@ class CreateAccount extends Component {
                   {...this.state}
                   handleSubmit={this.handleSubmit}
                   handleChange={this.handleChange}
+                  handleRecaptcha={this.handleRecaptcha}
                />
             </CreateAccountSection>
          </CreateAccountContainer>

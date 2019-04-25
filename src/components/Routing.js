@@ -9,6 +9,7 @@ import Footer from './common/Footer'
 import DashboardDetailWithRouter from './dashboard/DashboardDetail'
 import { CreateAccountWithRouter } from './accounts/CreateAccount'
 import { LoginWithRouter } from './login/Login'
+import { ContactsWithRouter } from './contacts/Contacts'
 
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from './GlobalStyle'
@@ -41,6 +42,12 @@ class Routing extends Component {
                            path='/login'
                            component={LoginWithRouter}
                         />
+                        <Route
+                           exact
+                           path='/contacts'
+                           component={ContactsWithRouter}
+                        />
+
                         <Route component={DashboardDetailWithRouter} />
                      </Switch>
                      <Footer />

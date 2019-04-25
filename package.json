@@ -1,11 +1,11 @@
 {
-   "homepage": "https://marcinbodnar.github.io/near-wallet",
+   "homepage": "https://marcinbodnar.github.io/near-wallet-new",
    "name": "wallet",
    "version": "0.1.0",
    "private": true,
    "dependencies": {
       "gh-pages": "^2.0.1",
-      "nearlib": "^0.4.7",
+      "nearlib": "^0.5.4",
       "prop-types": "^15.7.2",
       "query-string": "^6.4.2",
       "react": "^16.8.6",

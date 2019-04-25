@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import DashboardOtherAssets from './DashboardOtherAssets'
 
@@ -14,13 +15,18 @@ const CustomContainer = styled(Container)`
       padding-top: 48px;
       padding-bottom: 0px;
 
-      .column:first-child {
-         padding-left: 0px;
+      .column {
+         padding: 0 0 24px 0;
+
+         :first-child {
+            padding-left: 0px;
+         }
       }
 
       h1 {
          color: #4a4f54;
          padding-left: 0px;
+         line-height: 48px;
       }
    }
 
@@ -30,26 +36,30 @@ const CustomContainer = styled(Container)`
    }
 
    &&& .send-money {
-      height: 60px;
-      border-radius: 30px;
-      border: solid 2px #5ace84;
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      color: #5ace84;
-      background: #fff;
       margin: -8px 0 0 0;
-      text-align: left;
-      padding: 0 0 0 40px;
 
-      background-image: url(${ArrowRightImage});
-      background-repeat: no-repeat;
-      background-position: 90% center;
-      background-size: 14px 20px;
+      > .button {
+         width: 100%;
+         line-height: 60px;
+         border-radius: 30px;
+         border: solid 2px #5ace84;
+         font-size: 18px;
+         font-weight: 500;
+         letter-spacing: 2px;
+         color: #5ace84;
+         background: #fff;
+         text-align: left;
+         padding: 0 0 0 40px;
 
-      :hover {
-         background-color: #5ace84;
-         color: #fff;
+         background-image: url(${ArrowRightImage});
+         background-repeat: no-repeat;
+         background-position: 90% center;
+         background-size: 14px 20px;
+
+         :hover {
+            background-color: #5ace84;
+            color: #fff;
+         }
       }
    }
 
@@ -86,9 +96,10 @@ const DashboardContainer = ({ children }) => (
                tablet={5}
                mobile={16}
                className='send-money'
-               as={Button}
             >
-               SEND MONEY
+               <Button as={Link} to='/contacts'>
+                  SEND MONEY
+               </Button>
             </Grid.Column>
          </Grid.Row>
       </Grid>

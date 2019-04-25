@@ -172,7 +172,7 @@ export default createGlobalStyle`
       border-bottom: 2px solid #f8f8f8 !important;
    }
    .border-bottom-bold {
-      border-bottom: 4px solid #f8f8f8 !important;
+      border-bottom: 4px solid #e6e6e6 !important;
    }
    .border-bottom-light {
       border-bottom: 1px solid #f8f8f8 !important;
@@ -183,7 +183,7 @@ export default createGlobalStyle`
    }
 
    .border-top-bold {
-      border-top: 4px solid #f8f8f8 !important;
+      border-top: 4px solid #e6e6e6 !important;
    }
    .border-top-light {
       border-top: 1px solid #f8f8f8 !important;

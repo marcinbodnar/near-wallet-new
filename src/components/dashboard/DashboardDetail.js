@@ -110,14 +110,14 @@ class DashboardDetail extends Component {
                   loader={loader}
                   image={AuthorizedGreyImage}
                   title='Authorized Apps'
-                  to='/'
+                  to='/authorized-apps'
                   activity={authorizedaps}
                />
                <DashboardActivity
                   loader={loader}
                   image={ContactsGreyImage}
                   title='New Contacts'
-                  to='/'
+                  to='/contacts'
                   activity={newcontacts}
                />
             </DashboardSection>
